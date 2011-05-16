@@ -1,4 +1,4 @@
-#First Steps
+=First Steps=
 Each page is saprated to at least 2 parts, and we'll talk about them in this guide.
 - Action - The functional code, basically the "engine" of the page.
 - View - The graphical part, or: What the user sees.
