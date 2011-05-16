@@ -95,11 +95,11 @@ Example:
 ===/Application/Views/profile.uesr.inc===
 {{{
 <h1><?php $view->user_information['username']?>'s Profile</h1>
-<strong>Name:</strong> <?php $view->user_information['first_name'];?>.
+<strong>Name:</strong> <?php $view->user_information['first_name'];?>.<br />
 <strong>Agee:</strong> <?php $view->user_information['age'];?>.
 }}}
 
 This will print:
 <h1>Mr.bluz's Profile</h1>
-<strong>Name:</strong> Eliran.
+<strong>Name:</strong> Eliran.<br />
 <strong>Agee:</strong> 18.
