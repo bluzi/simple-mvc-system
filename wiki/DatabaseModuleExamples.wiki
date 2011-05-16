@@ -1,37 +1,34 @@
 #labels Featured,Phase-Implementation
-<?php 	
-	/**
-	 * Connect to database
-	 */
+==Connect to database==
+<?php
 	$db = new Database();
-
-	/**
-	 * Select all rows from table users
-	 */
+?>
+ 
+==Select all rows from table users==
+<?php
 	$rows = $db->table('users')->select();
-	
-	/**
-	 * Select all rows from table users, where user_id = 1, or user id = 5
-	 */
+?>
+
+==Select all rows from table users, where user_id = 1, or user id = 5==
+<?php
 	$rows = $db
-			->table('users')
-			->where(null, 'user_id', '=', 1)
-			->where('or', 'user_id', '=', 5)
-			-select();
-			
-	/**
-	 * Insert new row to table quz, foo = hello, and bar = world
-	 */
-		$db
+		->table('users')
+		->where(null, 'user_id', '=', 1)
+		->where('or', 'user_id', '=', 5)
+		-select();
+?>
+==Insert new row to table quz, foo = hello, and bar = world==
+<?php
+	$db
 		->table('quz')
 		->fields('foo', 'bar')
 		->values('hello', 'world')
 		->insert();
+?>
 		
-	/**
-	 * Delete a row from table quz where foo = hello and bar = world
-	 */
-		$db
+==Delete a row from table quz where foo = hello and bar = world==
+<?php
+	$db
 		->table('quz')
 		->where('', 'foo', '=', 'hello')
 		->where('and', 'bar', '=', 'world')
