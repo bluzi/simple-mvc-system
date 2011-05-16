@@ -462,20 +462,28 @@ class Database {
 	
 	/**
 	 * Fetch the results sent from a DB query, most likely from a SELECT query.
+	 * 
+	 * @update
+	 * 	@date 16/05/2011
+	 * 	@description Bug fix: mysql_fetch_array.
 	 */
 	public function fetch_query($q) {
 		if ($q === false) {
 			return false;
 		}
 		else {
-			if (@mysql_num_rows($q) == 0) {
+			if (@mysql_num_rows($q) == 0 && 0) {
 				$output = array();
 			}
-			else if (@mysql_num_rows($q) == 1) {
+			else if (@mysql_num_rows($q) == 1 && 0) {
 				$output = array(mysql_fetch_assoc($q));
 			}
 			else {
-				$output = mysql_fetch_array($q);
+				while ($r = mysql_fetch_array($q)) {
+					$arr[] = $r;
+				}
+				@mysql_free_result($q);
+				$output = $arr;
 			}
 		}
 		
