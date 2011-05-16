@@ -40,8 +40,13 @@ class userController extends Controller {
 ?>
 }}}
 
-*The controller and action names, are important. Controller name should be: "x.controller.inc", and action name should be: "xAction". Also, the name of the controller class is important. It should be "xController". (x = the given name)
+*The controller and action names, are important. 
+Controller name should be: "x.controller.inc", and action name should be: "xAction". 
+
+Also, the name of the controller class is important. It should be "xController". (x = the given name)
+
 Please try to keep all the names in one format. I suggest lower case letters.
+
 One more thing about controllers, is that they must be placed in /Application/Controllers/.*
 
 ==Views==
