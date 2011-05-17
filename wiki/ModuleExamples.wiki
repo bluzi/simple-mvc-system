@@ -5,7 +5,7 @@
 ==What is a Module?==
 A module, or a model, is a class which implements an object in the system. To list a few examples: User, Blog Post, Product, Category, Page, or even DOM elements, like a table.
 
-For a more comprehensive example, we will refer to the blog post example: A blog post might have a title, it has textual content, an author and possibly a posting date. For indexing purposes, it also has a unique I.D.
+For a more comprehensive example, we will refer to the blog post mentioned above: A blog post might have a title, it has textual content, an author and possibly a posting date. For indexing purposes, it also has a unique I.D.
 There are several operations which could be related to the said blog post: it could be created, edited, deleted and so on.
 
 For the sake of the example, we will assume that there are blog posts filled in our database, and that there is a method of BlogPost which edits the title & content of the post, called "edit".
