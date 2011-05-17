@@ -2,35 +2,32 @@
 =Module Examples=
 *Please read [FirstSteps] First.*
 
-==What's a module?==
-A module, or a model, is a class that implements an object in the system. (Abstract objects, like a User, Thread, Forum, Category, Page, or even DOM elements, like a table)
+==What is a Module?==
+A module, or a model, is a class which implements an object in the system. To list a few examples: User, Blog Post, Product, Category, Page, or even DOM elements, like a table.
 
-For example, if we're building a forum system, and each thread contains it's information, id, and actions you can execute. (For example, delete a thread, edit a thread, create a new one, promote it and so on...)
-We'll make a module called Thread Module, it'll take the thread ID, and pull the thread information from the database, into the module.
-Tread Module will hold the methods:
-edit($title, $content);
-delete();
-etc...
+For a more comprehensive example, we will refer to the blog post example: A blog post might have a title, it has textual content, an author and possibly a posting date. For indexing purposes, it also has a unique I.D.
+There are several operations which could be related to the said blog post: it could be created, edited, deleted and so on.
 
-So, when I'll need to implement thread stuff, it'll be much easier.
+For the sake of the example, we will assume that there are blog posts filled in our database, and that there is a method of BlogPost which edits the title & content of the post, called "edit".
 
-For example:
+We will implement a function which retrieves one of them (by it's I.D) from the database, and performs operations on it: 
+
 {{{
 <?php 
 
-	public function threadAction() {
-		$thread = new threadModule($_GET['id']);
-		echo $thread->title;
-		$thread->edit($thread->title . ' (!)', $thread->content);
+	public function blogpostAction() {
+		$blogpost = new BlogPost($_GET['id']);
+		echo $blogpost->title;
+		$blogpost->edit($blogpost->title . ' (!)', $blogpost->content);
 		if ($_GET['delete'] === 1) {
-			$thread->delete();
+			$blogpost->delete();
 		}
 	}
 
 ?>
 }}}
 
-==Empty module Example==
+==Empty Module Example==
 {{{
 <?php 
 /**
@@ -71,16 +68,16 @@ class userModule {
 ?>
 }}}
 
-==Module format==
-All the modules are placed in: "/Appliaction/Modules/", the naming format is: "user.module.inc" (Replace the "user" with the module name).
+==Module Format==
+All the modules are placed at: "/Appliaction/Modules/", the naming format is: "user.module.inc" (Replace the "user" with the module name).
 Also, the class name should be "userModule", where "user" is the module name.
 
-Please try to use only lower case letters in the file naming.
+Please try to only use lower case letters in the file naming.
 
-==Calling a module==
-The best things to do with modules, is to call them only from the Action part (see [FirstSteps]), but basically you can call modules from everywhere. (Even from the view section)
+==Calling a Module==
+Generally, Modules should only be called by Actions, located in the Controllers (see [FirstSteps]), however it is possible to call them from anywhere at the code (Even from the Views section).
 
-To call a module, simply implement a new class (using PHP "new" function). The class name should be "userModule". (when "user" is the module name)
+To call a Module, simply implement a new instance (using PHP "new" reserved word). The class name should be "userModule". (when "user" is the module name)
 
 {{{
 <?php
