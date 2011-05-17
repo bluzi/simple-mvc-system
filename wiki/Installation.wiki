@@ -3,7 +3,7 @@
 
 ==Requirements==
 *Apache* - Apache Web Server installed.
-*PHP* - PHP plugin installed.
+*PHP 5* - PHP plugin installed.
 *Required Apache Plguins* - rewrite_mod installed.
 
 ==How to install==
