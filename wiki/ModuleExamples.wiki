@@ -69,7 +69,7 @@ class userModule {
 }}}
 
 ==Module format==
-All the modules are placed in: "/Appliaction/Modules/", the naming format is: "*.module.inc" (Replace the asterisk with the module name).
+All the modules are placed in: "/Appliaction/Modules/", the naming format is: "user.module.inc" (Replace the "user" with the module name).
 Also, the class name should be "userModule", where "user" is the module name.
 
 Please try to use only lower case letters in the file naming.
