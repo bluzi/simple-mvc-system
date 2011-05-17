@@ -1,0 +1,86 @@
+=Module Examples=
+==What's a module?==
+A module, or a model, is a class that implements an object in the system. (Abstract objects, like a User, Thread, Forum, Category, Page, or even DOM elements, like a table)
+
+For example, if we're building a forum system, and each thread contains it's information, id, and actions you can execute. (For example, delete a thread, edit a thread, create a new one, promote it and so on...)
+We'll make a module called Thread Module, it'll take the thread ID, and pull the thread information from the database, into the module.
+Tread Module will hold the methods:
+edit($title, $content);
+delete();
+etc...
+
+So, when I'll need to implement thread stuff, it'll be much easier.
+
+For example:
+{{{
+<?php 
+
+	public function threadAction() {
+		$thread = new threadModule($_GET['id']);
+		echo $thread->title;
+		$thread->edit($thread->title . ' (!)', $thread->content);
+		if ($_GET['delete'] === 1) {
+			$thread->delete();
+		}
+	}
+
+?>
+}}}
+
+==Empty module Example==
+{{{
+<?php 
+/**
+ * @name user.module.inc
+ * @description 
+ * @date 31/03/2011
+ * @author Tomer Shvadron
+ * @team Eliran Pe'er
+ */
+
+/**
+ * This is an example module.
+ */
+
+class userModule {
+
+	// Constants
+	
+	/**
+	 * Holds the column name in the database for this object's Id.
+	 */
+	const id = 'user_id';
+
+	// Variables
+
+	/**
+	 * The user type
+	 */
+	public $user_id= '';
+
+	// Methods
+
+	public function __construct($user_id) {
+		// Code here
+	}
+
+}
+?>
+}}}
+
+==Module format==
+All the modules are placed in: "/Appliaction/Modules/", the naming format is: "*.module.inc" (Replace the asterisk with the module name).
+Also, the class name should be "userModule", where "user" is the module name.
+
+Please try to use only lower case letters in the file naming.
+
+==Calling a module==
+The best things to do with modules, is to call them only from the Action part (see [FirstSteps]), but basically you can call modules from everywhere. (Even from the view section)
+
+To call a module, simply implement a new class (using PHP "new" function). The class name should be "userModule". (when "user" is the module name)
+
+{{{
+<?php
+	$user = new userModule(42);
+?>
+}}}
