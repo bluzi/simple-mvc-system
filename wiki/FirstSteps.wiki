@@ -2,6 +2,7 @@
 =First Steps=
 *If you need any installation instructions, please refer to [Installation].*
 
+==Structure==
 Each page is separated to at least 2 parts, which will be discussed in this guide.
 
 - *Action* - The functional code, the "engine" of the page.
