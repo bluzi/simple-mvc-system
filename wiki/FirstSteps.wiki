@@ -1,17 +1,17 @@
 #labels Featured,Phase-Implementation
 =First Steps=
-Each page is saprated to at least 2 parts, and we'll talk about them in this guide.
+Each page is separated to at least 2 parts, which will be discussed in this guide.
 
-- *Action* - The functional code, basically the "engine" of the page.
+- *Action* - The functional code, the "engine" of the page.
 
-- *View* - The graphical part, or: What the user sees.
+- *View* - The graphical part, or: What the user sees & interacts with.
 
-The missing part is the module (or model) part, and you might read about it in the [ModuleExamples] wiki page.
+The missing part is the module (or model) part, and you might want to read more about it in the [ModuleExamples] page.
 
 ==Controllers==
-The actions ordered by controllers, which are, basically, "page categories". For example, the pages: "Login", "Profile" and "Logout" will be placed in the User Controller, and the pages: "Topiclist", "Topic" and "Reply", will be placed in the ForumController". (For example)
+The actions are ordered by the controllers, which are "page categories". For example, if we take a look at a web boards system (forums), the pages: "Login", "Profile" and "Logout" will be placed in the User Controller, and the pages: "Topicslist", "Topic" and "Reply", will be placed in the ForumController". 
 
-Basic controller should look much like:
+A basic controller should look something like this:
 
 ===/Application/Controllers/user.controller.inc===
 {{{
@@ -45,7 +45,7 @@ class userController extends Controller {
 ?>
 }}}
 
-*The controller and action names, are important. 
+*The controller and action names are important: 
 Controller name should be: "x.controller.inc", and action name should be: "xAction". *
 
 *Also, the name of the controller class is important. It should be "xController". (x = the given name)*
@@ -55,11 +55,12 @@ Controller name should be: "x.controller.inc", and action name should be: "xActi
 *One more thing about controllers, is that they must be placed in /Application/Controllers/.*
 
 ==Views==
-After you wrote the action code, you sometimes want to show the user the results.
-So, views will be placed in /Application/Views/. The name format is "action.controller.inc" (action = the action name, controller = the controller name).
+After you wrote the action code, you will probably want to show the user the results.
+So, views will be placed in /Application/Views/. The naming format is "action.controller.inc" (action = the action name, controller = the controller name).
 
 To pass variables between actions and views, you use the variable $this->_view in the action part.
-For example, if I want to pass information about the uesr in the profile action, I'll do something like that:
+
+For example, if I want to pass information about the user in the profile action, I'll do something like that:
 (Notice the profileAction)
 {{{
 <?php 
@@ -99,7 +100,7 @@ class userController extends Controller {
 }}}
 
 So, after we passed the information from the action, we would like to call it from the view, and print it on the screen.
-For that, we'll use the variable $view, in the view part.
+In order to do that, we will use the variable $view, in the view part.
 
 Example:
 ===/Application/Views/profile.uesr.inc===
