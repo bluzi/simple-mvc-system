@@ -1,3 +1,4 @@
+#labels Featured,Phase-Implementation
 =Module Examples=
 ==What's a module?==
 A module, or a model, is a class that implements an object in the system. (Abstract objects, like a User, Thread, Forum, Category, Page, or even DOM elements, like a table)
