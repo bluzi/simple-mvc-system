@@ -1,3 +1,5 @@
 RewriteEngine on
-RewriteBase /Soda/school/
+
+RewriteBase /Eutheria/
+
 RewriteRule ^([a-zA-Z0-9\/\=\_]*)$ Boot/index.php?path=$1&request=controller

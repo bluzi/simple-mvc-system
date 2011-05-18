@@ -37,10 +37,10 @@ class Controller {
 		return $this->_view;
 	}
 	
-	protected function __get($member) {
+	final public function __get($member) {
 	}
 	
-	protected function __set($member, $value) {
+	final public function __set($member, $value) {
 	}
 	
 	/**
