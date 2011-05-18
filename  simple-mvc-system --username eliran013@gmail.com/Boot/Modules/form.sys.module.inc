@@ -616,6 +616,7 @@ class Form {
 	 * Render all the attributes from $_attr to HTML format. (key="value")
 	 */
 	protected function _render_attrs($attrs) {
+	$output = '';
 	if ($this->_num_attrs($attrs) < 1) { return false; }
 		$reserved_attributes = explode(', ', self::reserved_attributes);
 		foreach($attrs as $key => $value) {

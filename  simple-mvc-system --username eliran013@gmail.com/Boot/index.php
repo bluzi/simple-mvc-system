@@ -64,18 +64,20 @@
 			// Fetch get variables
 			$_GET = array();
 			foreach ($variables as $var) {
-				list ($key, $value) = explode('=', $var);
-				if (is_null($value) || $value == 'true') {
-					$value = true;
-				}
-				else if (empty($value) || $value == 'false') {
-					$value = false;
-				}
+				if (!empty($var)) {
+					list ($key, $value) = explode('=', $var);
+					if (is_null($value) || $value == 'true') {
+						$value = true;
+					}
+					else if (empty($value) || $value == 'false') {
+						$value = false;
+					}
 					$_GET[$key] = $value;
+				}
 			}
 									
 			// Include the controller
-			$controller_file = FOLDER_BASE . 'Application/Controllers/' . $controller . '.controller.inc';
+			$controller_file = FOLDER_CONTROLLERS . $controller . '.controller.inc';
 			if (is_file($controller_file)) {
 				include_once($controller_file);
 				$controller_class = $controller . 'Controller';
